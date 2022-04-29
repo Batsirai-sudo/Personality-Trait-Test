@@ -79,7 +79,6 @@ const Test: NextPage<QuestionProps> = (props) => {
 };
 
 Test.getInitialProps = async () => {
-  // const url = `${process.env.API_HOST}/api/questions`;
   const url = `http://localhost:3000/api/questions`;
   const res = await fetch(url);
   const json = await res.json();
