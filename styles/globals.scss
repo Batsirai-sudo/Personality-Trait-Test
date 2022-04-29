@@ -1,0 +1,165 @@
+@import './variables.module'; 
+ 
+/* primary font */
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 300;
+  src:  url(/fonts/Poppins-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  src:  url(/fonts/Poppins-Regular.ttf) format('truetype');
+} 
+ 
+@font-face {
+  font-family: 'Poppins';  
+  font-weight: 500;
+  src:  url(/fonts/Poppins-Medium.ttf) format('truetype');
+}
+ 
+@font-face { 
+  font-family: 'Poppins'; 
+  font-weight: 700; 
+  src:  url(/fonts/Poppins-Bold.ttf) format('truetype');
+}
+
+
+/* reset browser default styles */
+html, body, a, p, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*, 
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
+
+/* base styles */
+html,
+body {
+  text-align: center; 
+  height: auto;        
+  line-height: 1.6;   
+  font-size:14px;
+  font-family:'Poppins';  
+  font-weight: 400;  
+  color: $primary-variant
+} 
+
+h1, h2, h3{
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.25;
+  letter-spacing: -0.025rem;
+  color: $primary-color;
+}
+
+main{
+  padding: 1rem;
+}  
+button{
+  position: relative;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer; 
+  margin: 20px 0;  
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: $shadow; 
+  padding: 5px 30px;  
+  min-height: 40px;
+  background-color: $primary-color; 
+  color: $secondary-color;
+  border-radius: 4px;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $secondary-color;
+  font: inherit;
+  color: $primary-color;
+  width: 1em; 
+  height: 1em;  
+  border: 0.10em solid $primary-color;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em $primary-variant;
+  background-color: $primary-color;   
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+} 
+
+.counter{
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0px; 
+  
+  &__container{
+    padding: 16px;  
+  }
+
+  &__wrapper{
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: none;
+  }
+
+  &__wrapper2{ 
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 4px;
+    background-color: rgb(2, 100, 81);
+  }
+  
+  &__section{
+    position: relative;
+    width: 36px;
+    min-width: 36px;   
+    height: 32px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    color: $secondary-color;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  &__separator{
+    background-color: #ffffff5e; 
+    width: 1px; 
+  }
+}
+ 
+@media (min-width: 768px) {
+  body{    
+  font-size: 16px;
+   }
+}
+
+
+

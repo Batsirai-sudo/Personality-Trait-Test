@@ -1,0 +1,61 @@
+@import './variables.module'; 
+
+.question { 
+    min-width: 95vw;    
+    padding: 1rem;  
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    text-align: start;   
+   
+    &_main, &_container{
+      height: 100vh;  
+    }
+   
+    &_container{ 
+      margin: 1rem 0; 
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      scroll-snap-align: start;  
+    }
+     
+    &_main{ 
+      scroll-snap-type: y mandatory; 
+      overflow: auto;
+    }
+   
+    &__title{  
+      font-size:1.5em; 
+      color: $primary-color; 
+      font-weight: 500;  
+      margin-bottom: 20px;
+    }
+    &__answer{
+      font-size:1em; 
+      color: $primary-variant; 
+      margin: 0 7px; 
+      cursor: pointer; 
+      
+      &_flex{ 
+          display: flex;
+          align-items:center;  
+      }
+    } 
+  }   
+
+.results{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}  
+
+  
+@media (min-width: $breakpoint-tablet) {
+    .question { 
+        min-width: 50vw; 
+        width: 60vw; 
+    }
+}
